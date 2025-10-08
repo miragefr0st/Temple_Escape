@@ -50,6 +50,12 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
 
+void ATemple_EscapeCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+}
+
 void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	// Set up action bindings
@@ -120,14 +126,21 @@ void ATemple_EscapeCharacter::DoLook(float Yaw, float Pitch)
 	}
 }
 
+void ATemple_EscapeCharacter::Interact()
+{
+	GEngine->AddOnScreenDebugMessage(INDEX_NONE, 5.f, FColor::Red, *FString::Printf(TEXT("On Component Overlap")));
+}
+
 void ATemple_EscapeCharacter::DoJumpStart()
 {
+	Interact();
+
 	// signal the character to jump
-	Jump();
+	//Jump();
 }
 
 void ATemple_EscapeCharacter::DoJumpEnd()
 {
 	// signal the character to stop jumping
-	StopJumping();
+	//StopJumping();
 }

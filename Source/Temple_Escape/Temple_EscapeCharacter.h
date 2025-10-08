@@ -13,6 +13,7 @@ class UInputAction;
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUnlock, bool, Success);
 
 /**
  *  A simple player-controllable third person character
@@ -54,10 +55,15 @@ public:
 	/** Constructor */
 	ATemple_EscapeCharacter();	
 
+	UPROPERTY(BlueprintAssignable)
+	FOnUnlock OnUnlock;
+
 protected:
 
 	/** Initialize input action bindings */
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	
 
 protected:
 
@@ -66,6 +72,9 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	void Interact();
+
 
 public:
 
@@ -92,5 +101,7 @@ public:
 
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	virtual void BeginPlay() override;
 };
 
