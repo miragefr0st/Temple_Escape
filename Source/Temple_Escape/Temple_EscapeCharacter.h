@@ -72,6 +72,11 @@ protected:
 	/** Initialize input action bindings */
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	virtual void BeginPlay() {
+		Super::BeginPlay();
+		OnHealthChanged.Broadcast(8.f);
+	}
+
 protected:
 
 	/** Called for movement input */
