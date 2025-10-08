@@ -14,6 +14,9 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChanged, float, health); //
+DECLARE_DYNAMIC_DELEGATE(FPicUpSomething);
+
 /**
  *  A simple player-controllable third person character
  *  Implements a controllable orbiting camera
@@ -23,6 +26,8 @@ class ATemple_EscapeCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+private:
+
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* CameraBoom;
@@ -30,7 +35,15 @@ class ATemple_EscapeCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
-	
+
+public : 
+
+	UPROPERTY(BlueprintAssignable)
+	FOnHealthChanged OnHealthChanged;
+
+	UPROPERTY()
+	FPicUpSomething OnPickingUp;
+
 protected:
 
 	/** Jump Input Action */
