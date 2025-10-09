@@ -16,10 +16,10 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
-=======
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChanged, float, health); //
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLevitate, float, timeLoop); //
 DECLARE_DYNAMIC_DELEGATE(FPicUpSomething);
->>>>>>> 02b64af4dea7a1e13802d638ce7f657de351995b
+
 
 /**
  *  A simple player-controllable third person character
@@ -45,7 +45,7 @@ private:
 public : 
 
 	UPROPERTY(BlueprintAssignable)
-	FOnHealthChanged OnHealthChanged;
+	FLevitate OnLevitate;
 
 	UPROPERTY()
 	FPicUpSomething OnPickingUp;
@@ -81,7 +81,7 @@ protected:
 
 	virtual void BeginPlay() {
 		Super::BeginPlay();
-		OnHealthChanged.Broadcast(8.f);
+		//OnHealthChanged.Broadcast(8.f);
 	}
 
 protected:

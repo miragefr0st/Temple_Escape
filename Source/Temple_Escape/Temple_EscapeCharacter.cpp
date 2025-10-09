@@ -56,7 +56,7 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
 		// Jumping
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoJumpStart);
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
 
 		// Moving
@@ -123,7 +123,8 @@ void ATemple_EscapeCharacter::DoLook(float Yaw, float Pitch)
 void ATemple_EscapeCharacter::DoJumpStart()
 {
 	// signal the character to jump
-	Jump();
+	//Jump();
+	OnLevitate.Broadcast(0.08);
 }
 
 void ATemple_EscapeCharacter::DoJumpEnd()
