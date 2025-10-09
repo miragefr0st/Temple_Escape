@@ -16,9 +16,11 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLevitate, float, timeLoop); //
 DECLARE_DYNAMIC_DELEGATE(FMessageDyna);
+
+DECLARE_MULTICAST_DELEGATE(FMulticastCpp);
+DECLARE_DELEGATE(FDelegateCpp);
 
 
 /**
@@ -49,10 +51,18 @@ public :
 
 	FMessageDyna message;
 
+	FMulticastCpp msgCpp;
+	FDelegateCpp simpleDelegate;
+
 	virtual void BeginPlay() override;
 
 	UFUNCTION()
 	void DisplayStartMessage();
+
+	void MulticastMessage();
+
+	//UFUNCTION()
+	void SimpleDelegateMessage();
 
 protected:
 

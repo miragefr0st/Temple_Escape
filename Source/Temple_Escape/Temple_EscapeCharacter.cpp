@@ -75,11 +75,18 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 void ATemple_EscapeCharacter::BeginPlay() {
 	Super::BeginPlay();
 	message.BindUFunction(this, "DisplayStartMessage");
-	UE_LOG(LogTemp, Warning, TEXT("message.IsBound() = %s"), message.IsBound() ? TEXT("true") : TEXT("false"));
+	msgCpp.AddUObject(this, &ATemple_EscapeCharacter::MulticastMessage);
+	//UE_LOG(LogTemp, Warning, TEXT("message.IsBound() = %s"), message.IsBound() ? TEXT("true") : TEXT("false"));
 	
-	if (message.IsBound()) {
+	if(message.IsBound()) {
 		message.Execute();
 	}
+
+	simpleDelegate.BindUObject(this, &ATemple_EscapeCharacter::SimpleDelegateMessage);
+	if (simpleDelegate.IsBound()) {
+		simpleDelegate.Execute();
+	}
+	msgCpp.Broadcast();
 }
 
 void ATemple_EscapeCharacter::DisplayStartMessage() {
@@ -91,6 +98,28 @@ void ATemple_EscapeCharacter::DisplayStartMessage() {
 			FColor::Blue,
 			FString::Printf(TEXT("Uniq Dynamic Delegate activated"))
 			);
+	}
+}
+
+void ATemple_EscapeCharacter::MulticastMessage() {
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			6.f,
+			FColor::Red,
+			FString::Printf(TEXT("Multicast Delegate activated"))
+		);
+	}
+}
+
+void ATemple_EscapeCharacter::SimpleDelegateMessage() {
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			6.f,
+			FColor::Yellow,
+			FString::Printf(TEXT("Simple Delegate activated"))
+		);
 	}
 }
 
