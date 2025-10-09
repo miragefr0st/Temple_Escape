@@ -18,7 +18,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLevitate, float, timeLoop); //
-DECLARE_DYNAMIC_DELEGATE(FPicUpSomething);
+DECLARE_DYNAMIC_DELEGATE(FMessageDyna);
 
 
 /**
@@ -47,9 +47,12 @@ public :
 	UPROPERTY(BlueprintAssignable)
 	FLevitate OnLevitate;
 
-	UFONCTION(CPF_BlueprintCallable)
-	FPicUpSomething OnPickingUp;
+	FMessageDyna message;
 
+	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void DisplayStartMessage();
 
 protected:
 
@@ -78,11 +81,6 @@ protected:
 
 	/** Initialize input action bindings */
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	virtual void BeginPlay() {
-		Super::BeginPlay();
-		//OnHealthChanged.Broadcast(8.f);
-	}
 
 protected:
 

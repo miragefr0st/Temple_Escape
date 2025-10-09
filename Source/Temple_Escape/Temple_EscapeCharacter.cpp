@@ -72,6 +72,28 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 	}
 }
 
+void ATemple_EscapeCharacter::BeginPlay() {
+	Super::BeginPlay();
+	message.BindUFunction(this, "DisplayStartMessage");
+	UE_LOG(LogTemp, Warning, TEXT("message.IsBound() = %s"), message.IsBound() ? TEXT("true") : TEXT("false"));
+	
+	if (message.IsBound()) {
+		message.Execute();
+	}
+}
+
+void ATemple_EscapeCharacter::DisplayStartMessage() {
+	/*aafichage a l'ecran*/
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			6.f,
+			FColor::Blue,
+			FString::Printf(TEXT("Uniq Dynamic Delegate activated"))
+			);
+	}
+}
+
 void ATemple_EscapeCharacter::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D
