@@ -47,7 +47,7 @@ public :
 	UPROPERTY(BlueprintAssignable)
 	FLevitate OnLevitate;
 
-	UPROPERTY()
+	UFONCTION(CPF_BlueprintCallable)
 	FPicUpSomething OnPickingUp;
 
 
