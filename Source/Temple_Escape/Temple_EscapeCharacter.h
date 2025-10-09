@@ -16,9 +16,10 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChanged, float, Health); // creation de l'event Dispatcher (i.e. un delegate)
-DECLARE_DELEGATE(FPickUpSomething);
-
+=======
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChanged, float, health); //
+DECLARE_DYNAMIC_DELEGATE(FPicUpSomething);
+>>>>>>> 02b64af4dea7a1e13802d638ce7f657de351995b
 
 /**
  *  A simple player-controllable third person character
@@ -29,7 +30,8 @@ class ATemple_EscapeCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-private :
+private:
+
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* CameraBoom;
@@ -38,13 +40,16 @@ private :
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
 
-public :
 
-	//UPROPERTY(BlueprintAssignable)
-	//FOnHealthChanged OnHealthChanged;
 
-	//UPROPERTY(BlueprintAssignable)
-	//FPickUpSomething pickUp;
+public : 
+
+	UPROPERTY(BlueprintAssignable)
+	FOnHealthChanged OnHealthChanged;
+
+	UPROPERTY()
+	FPicUpSomething OnPickingUp;
+
 
 protected:
 
@@ -73,6 +78,11 @@ protected:
 
 	/** Initialize input action bindings */
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	virtual void BeginPlay() {
+		Super::BeginPlay();
+		OnHealthChanged.Broadcast(8.f);
+	}
 
 protected:
 
