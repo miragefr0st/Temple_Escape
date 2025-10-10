@@ -12,6 +12,10 @@ class UCameraComponent;
 class UInputAction;
 struct FInputActionValue;
 
+DECLARE_DYNAMIC_DELEGATE(FMyDynamicDelegate);
+DECLARE_DELEGATE(FWelcomeDelegate);
+DECLARE_MULTICAST_DELEGATE(FMulticastDelegate);
+
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 /**
@@ -49,15 +53,27 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* MouseLookAction;
 
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputAction* Flash;
+
 public:
 
 	/** Constructor */
 	ATemple_EscapeCharacter();	
 
+	FMyDynamicDelegate OnTriggered;
+	FWelcomeDelegate BeginWelcome;
+	FMulticastDelegate OnTriggeredMulticast;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flash")
+	float FlashDistance = 300.f;
+
 protected:
 
 	/** Initialize input action bindings */
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	virtual void BeginPlay() override;
 
 protected:
 
@@ -68,6 +84,17 @@ protected:
 	void Look(const FInputActionValue& Value);
 
 public:
+
+	void SayHello();
+
+	void MulticastDelegate();
+
+	void Broadcast();
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void TriggerEvent();
+
+	void FlashForward();
 
 	/** Handles move inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")

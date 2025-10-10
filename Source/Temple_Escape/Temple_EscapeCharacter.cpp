@@ -65,6 +65,9 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ATemple_EscapeCharacter::Look);
+
+		//Flash
+		PlayerInputComponent->BindAction("Flash", IE_Pressed, this, &ATemple_EscapeCharacter::Broadcast);
 	}
 	else
 	{
@@ -108,6 +111,64 @@ void ATemple_EscapeCharacter::DoMove(float Right, float Forward)
 		AddMovementInput(ForwardDirection, Forward);
 		AddMovementInput(RightDirection, Right);
 	}
+}
+
+void ATemple_EscapeCharacter::BeginPlay() {
+	Super::BeginPlay();
+	OnTriggered.BindUFunction(this, "TriggerEvent");
+
+	OnTriggeredMulticast.AddUObject(this, &ATemple_EscapeCharacter::MulticastDelegate);
+	OnTriggeredMulticast.AddUObject(this, &ATemple_EscapeCharacter::FlashForward);
+
+	BeginWelcome.BindUObject(this, &ATemple_EscapeCharacter::SayHello);
+	if (BeginWelcome.IsBound())
+	{
+		BeginWelcome.Execute();
+	}
+}
+
+void ATemple_EscapeCharacter::TriggerEvent() {
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			6.f,
+			FColor::Red,
+			FString::Printf(TEXT("Uniq Dynamic Delegate activated : You passed the door"))
+		);
+	}
+}
+
+void ATemple_EscapeCharacter::SayHello() {
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			6.f,
+			FColor::Red,
+			FString::Printf(TEXT("Single-Cast Delegate activated : Welcome Player"))
+		);
+	}
+}
+
+void ATemple_EscapeCharacter::MulticastDelegate() {
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			6.f,
+			FColor::Red,
+			FString::Printf(TEXT("Multicast Delegate activated : You pressed E for Flash"))
+		);
+	}
+}
+
+void ATemple_EscapeCharacter::FlashForward() {
+	FVector Forward = GetActorForwardVector();
+	FVector NewLocation = GetActorLocation() + Forward * FlashDistance;
+
+	SetActorLocation(NewLocation, true);
+}
+
+void ATemple_EscapeCharacter::Broadcast() {
+	OnTriggeredMulticast.Broadcast();
 }
 
 void ATemple_EscapeCharacter::DoLook(float Yaw, float Pitch)
