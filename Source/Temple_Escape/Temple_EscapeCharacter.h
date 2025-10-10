@@ -56,7 +56,7 @@ public :
 
 	virtual void BeginPlay() override;
 
-	UFUNCTION()
+	UFUNCTION() //BlueprintCallable pour le rendre accessible dans le blueprint
 	void DisplayStartMessage();
 
 	void MulticastMessage(); 
