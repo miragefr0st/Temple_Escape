@@ -76,6 +76,7 @@ void ATemple_EscapeCharacter::BeginPlay() {
 	Super::BeginPlay();
 	message.BindUFunction(this, "DisplayStartMessage");
 	msgCpp.AddUObject(this, &ATemple_EscapeCharacter::MulticastMessage);
+	msgCpp.AddUObject(this, &ATemple_EscapeCharacter::MulticastMessage2);
 	//UE_LOG(LogTemp, Warning, TEXT("message.IsBound() = %s"), message.IsBound() ? TEXT("true") : TEXT("false"));
 	
 	if(message.IsBound()) {
@@ -90,7 +91,7 @@ void ATemple_EscapeCharacter::BeginPlay() {
 }
 
 void ATemple_EscapeCharacter::DisplayStartMessage() {
-	/*aafichage a l'ecran*/
+	/*afichage a l'ecran*/
 	if (GEngine) {
 		GEngine->AddOnScreenDebugMessage(
 			-1,
@@ -107,7 +108,18 @@ void ATemple_EscapeCharacter::MulticastMessage() {
 			-1,
 			6.f,
 			FColor::Red,
-			FString::Printf(TEXT("Multicast Delegate activated"))
+			FString::Printf(TEXT("Multicast Delegate 1 activated"))
+		);
+	}
+}
+
+void ATemple_EscapeCharacter::MulticastMessage2() {
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			6.f,
+			FColor::Cyan,
+			FString::Printf(TEXT("Multicast Delegate 2 activated"))
 		);
 	}
 }

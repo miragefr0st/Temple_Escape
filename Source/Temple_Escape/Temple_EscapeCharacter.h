@@ -59,7 +59,8 @@ public :
 	UFUNCTION()
 	void DisplayStartMessage();
 
-	void MulticastMessage();
+	void MulticastMessage(); 
+	void MulticastMessage2();
 
 	//UFUNCTION()
 	void SimpleDelegateMessage();
