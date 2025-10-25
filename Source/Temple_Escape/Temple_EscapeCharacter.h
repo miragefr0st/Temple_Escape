@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "InputActionValue.h"
+#include "PlayerInteraction_Interface.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
 #include "Temple_EscapeCharacter.generated.h"
@@ -49,6 +51,10 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* MouseLookAction;
 
+	/** Interaction Input Action */
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* InteractAction;
+
 public:
 
 	/** Constructor */
@@ -67,6 +73,9 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
+	/** Called for interact input */
+	void Interact(const FInputActionValue& value);
+	
 public:
 
 	/** Handles move inputs from either controls or UI interfaces */
@@ -84,6 +93,10 @@ public:
 	/** Handles jump pressed inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoJumpEnd();
+
+	/** Handles interact pressed inputs from either controls or UI interfaces */
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoInteract();
 
 public:
 

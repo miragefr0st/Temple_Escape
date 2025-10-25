@@ -56,8 +56,8 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
 		// Jumping
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoJumpStart);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ATemple_EscapeCharacter::DoJumpEnd);
 
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ATemple_EscapeCharacter::Move);
@@ -65,6 +65,9 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ATemple_EscapeCharacter::Look);
+
+		// Interact
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &ATemple_EscapeCharacter::DoInteract);
 	}
 	else
 	{
@@ -123,11 +126,18 @@ void ATemple_EscapeCharacter::DoLook(float Yaw, float Pitch)
 void ATemple_EscapeCharacter::DoJumpStart()
 {
 	// signal the character to jump
-	Jump();
+	//Jump();
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Jump");
 }
 
 void ATemple_EscapeCharacter::DoJumpEnd()
 {
 	// signal the character to stop jumping
-	StopJumping();
+	//StopJumping();
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Stop");
+}
+
+void ATemple_EscapeCharacter::DoInteract()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Interact");
 }
