@@ -118,7 +118,7 @@ void ATemple_EscapeCharacter::MulticastMessage2() {
 		GEngine->AddOnScreenDebugMessage(
 			-1,
 			6.f,
-			FColor::Cyan,
+			FColor::Green,
 			FString::Printf(TEXT("Multicast Delegate 2 activated"))
 		);
 	}
@@ -129,7 +129,7 @@ void ATemple_EscapeCharacter::SimpleDelegateMessage() {
 		GEngine->AddOnScreenDebugMessage(
 			-1,
 			6.f,
-			FColor::Yellow,
+			FColor::Blue,
 			FString::Printf(TEXT("Simple Delegate activated"))
 		);
 	}
