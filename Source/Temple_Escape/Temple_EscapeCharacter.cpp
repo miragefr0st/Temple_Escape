@@ -52,6 +52,7 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 
 void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Emerald, "SetUp");
 	// Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
@@ -94,6 +95,7 @@ void ATemple_EscapeCharacter::DoMove(float Right, float Forward)
 {
 	if (GetController() != nullptr)
 	{
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Emerald, "po!");
 		// find out which way is forward
 		const FRotator Rotation = GetController()->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
