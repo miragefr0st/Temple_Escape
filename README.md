@@ -18,8 +18,36 @@ Dans cette branche les exercices relatifs à l'IA se trouve dans le dossier **Ma
 
 *Remarque : j'ai pas pu detaillé le contenu des blueprint car je n'ai plus d'espace pour installer UE 5.6*
   
-## **Branche Mattys** par Mathis (celle utilisé pendant la présentation)
-*...sera compléter plus tard par Mathis*
+## **Branche Mattys** par Mattys (celle utilisé pendant la présentation)
+
+Sur cette branche, j’ai implémenté une IA de type Mecha utilisant un Behavior Tree avec un système de states géré par un Blackboard et un Enum.
+L’IA possède deux états principaux :
+
+**1. Patrol / Idle State**
+L’IA attend ou patrouille en choisissant un point aléatoire dans la zone.
+Avant chaque déplacement, elle clear son focus pour éviter les conflits.
+Le point de destination est obtenu via le Blueprint BP_FlyingZone, qui fournit une position aléatoire dans la map.
+Ce comportement est géré par la task Patrol.
+
+**2. Chase Player State**
+Lorsqu’un joueur entre dans la sphère de détection (vision), l’IA change d’état vers Chase.
+Elle clear son focus, puis set le focus sur le joueur et se met à le poursuivre.
+Une fois la distance d’attaque atteinte, elle exécute la task Attack.
+
+
+*Le changement d’état entre Patrol et Chase est contrôlé par la détection du joueur dans la sphère de vision.*
+
+Les tasks principales du Behavior Tree sont :
+- ClearFocus
+- SetFocus
+- Patrol
+- Attack
+
+Les Blueprints utilisés sont :
+- **BP_Mecha** : gère l’apparence du robot et ses composants d’IA.
+- **IAC_Mecha** : le AI Controller contenant la logique du Behavior Tree et la gestion du Blackboard.
+- **BP_FlyingZone** : détermine un point aléatoire dans la zone de patrouille.
+
 
 ## **Branche EventDispatcher_Caleb** par Caleb
 J'ai réutiliser la branche où j'ai réalisé les exercices sur les events dispatcher.
