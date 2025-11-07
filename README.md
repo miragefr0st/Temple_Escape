@@ -1,7 +1,7 @@
 # Temple_Escape
 ## Behavior Tree
 
-### **Branche BehavioTreeTest** par Marcus
+### **Branche BehaviorTreeTest** par Marcus
 Dans cette branche les exercices relatifs à l'IA se trouve dans le dossier **Maps > BlazingGear**, il contient :
 - **BehaviorTreeLvl** : level pour tester l'IA
 - **BP_EnemyIA** : le character ennemi
