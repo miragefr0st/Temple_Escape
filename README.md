@@ -18,3 +18,4 @@ Dans cette branche les exercices relatifs à l'IA se trouve dans le dossier **Ma
 *Remarque : j'ai pas pu detaillé le contenu des blueprint car je n'ai plus d'espace pour installer UE 5.6*
   
 ### **Branche Mattys** par Mathis (celle utilisé pendant la présentation)
+...sera compléter plus tard par Mathis
