@@ -20,3 +20,8 @@ Dans cette branche les exercices relatifs à l'IA se trouve dans le dossier **Ma
   
 ### **Branche Mattys** par Mathis (celle utilisé pendant la présentation)
 *...sera compléter plus tard par Mathis*
+
+### **Branche EventDispatcher_Caleb** par Caleb
+J'ai réutiliser la branche où j'ai réalisé les exercices sur les events dispatcher.
+Vous pouvez retrouver les blueprints relatifs à l'IA que j'ai réalisé dans content/blueprint/IA.
+J'ai également modifier le bp_thirdpersoncharacter d'unreal pour ajouter le crouch et le component AIPerception StimulusSource.
