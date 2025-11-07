@@ -15,7 +15,6 @@ Dans cette branche les exercices relatifs à l'IA se trouve dans le dossier **Ma
     - **BB_EnemyBase** : le blackboard associé au behavior tree
     - **Decorator** : un dossier contenant les decorateur du behavior tree (juste un pour le moment qui verifie si l'IA possede un spline)
     - **Task** : dossier contenant les tâches du behavior tree, un pour suivre la spline et un pour changer la vitesse de l'IA
-    - 
 *Remarque : j'ai pas pu detaillé le contenu des blueprint car je n'ai plus d'espace pour installer UE 5.6*
   
 ### **Branche Mattys** par Mathis (celle utilisé pendant la présentation)
