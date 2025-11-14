@@ -34,7 +34,10 @@ class ATemple_EscapeCharacter : public ACharacter
 	UCameraComponent* FollowCamera;
 	
 protected:
-
+	/** Size of LineTrace for Interact Detection */
+	UPROPERTY(EditAnywhere, Category="Interact")
+	float LineTraceLength = 1.0f;
+	
 	/** Jump Input Action */
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* JumpAction;

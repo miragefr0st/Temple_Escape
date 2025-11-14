@@ -52,6 +52,7 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 
 void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Purple, "compilation works");
 	// Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
@@ -67,7 +68,7 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ATemple_EscapeCharacter::Look);
 
 		// Interact
-		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &ATemple_EscapeCharacter::DoInteract);
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoInteract);
 	}
 	else
 	{
@@ -126,18 +127,37 @@ void ATemple_EscapeCharacter::DoLook(float Yaw, float Pitch)
 void ATemple_EscapeCharacter::DoJumpStart()
 {
 	// signal the character to jump
-	//Jump();
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Jump");
+	Jump();
 }
 
 void ATemple_EscapeCharacter::DoJumpEnd()
 {
 	// signal the character to stop jumping
-	//StopJumping();
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Stop");
+	StopJumping();
 }
 
 void ATemple_EscapeCharacter::DoInteract()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Interact");
+	/*Antipode LineTrace Example: https://dev.epicgames.com/community/snippets/2rR/simple-c-line-trace-collision-query*/
+
+	FHitResult Hit;
+	
+	FVector TraceStart = GetActorLocation();
+	FVector TraceEnd = GetActorLocation() + GetActorForwardVector() * LineTraceLength;
+	
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(this);
+ 
+	
+	GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, ECC_Vehicle, QueryParams);
+	
+	DrawDebugLine(GetWorld(), TraceStart, TraceEnd, Hit.bBlockingHit ? FColor::Blue : FColor::Red, false, 5.0f, 0, 5.0f);
+ 
+	// If the trace hit something, bBlockingHit will be true,
+	// and its fields will be filled with detailed info about what was hit
+	if (Hit.bBlockingHit && IsValid(Hit.GetActor()))
+	{
+		Cast<IPlayerInteraction_Interface>(Hit.GetActor())->Execute_Interact(Hit.GetActor());
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact hit: "+Hit.GetActor()->GetName());
+	}
 }

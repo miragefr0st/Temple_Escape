@@ -7,18 +7,19 @@
 #include  "PlayerInteraction_Interface.generated.h"
 
 /** Please add a class description */
-UINTERFACE(NotBlueprintable)
-class TEMPLE_ESCAPE_API UPlayerInteraction_Interface : public UInterface
+// This class does not need to be modified.
+UINTERFACE(MinimalAPI, Blueprintable)
+class UPlayerInteraction_Interface : public UInterface
 {
 	GENERATED_BODY()
-
 };
 
 class TEMPLE_ESCAPE_API IPlayerInteraction_Interface
 {
 	GENERATED_BODY()
 
+	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	UFUNCTION(BlueprintCallable)
-	virtual void Interact();
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Player Interaction")
+	void Interact();
 };
