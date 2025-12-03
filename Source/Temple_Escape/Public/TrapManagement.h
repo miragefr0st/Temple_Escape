@@ -16,11 +16,13 @@ class TEMPLE_ESCAPE_API ATrapManagement : public AActor
 	GENERATED_BODY()
 
 public : 
+	//le pièges à spawn
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Traps", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<ABaseTrap> trapClass;
 
-	//UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Traps", meta = (AllowPrivateAccess = "true"))
-	//TArray<ABaseTrap*> ActiveTraps;
+	//la liste de pieges
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Traps", meta = (AllowPrivateAccess = "true"))
+	TArray<ABaseTrap*> ActiveTraps;
 
 
 	
