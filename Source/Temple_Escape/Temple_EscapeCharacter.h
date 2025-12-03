@@ -58,6 +58,13 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* InteractAction;
 
+	/** Interaction Input Action */
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* CrouchAction;
+
+	/** Interaction Input Action */
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* RunAction;
 public:
 
 	/** Constructor */
@@ -76,8 +83,6 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
-	/** Called for interact input */
-	void Interact(const FInputActionValue& value);
 	
 public:
 
@@ -101,6 +106,13 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoInteract();
 
+	/** Handles interact pressed inputs from either controls or UI interfaces */
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoCrouch();
+
+	/** Handles interact pressed inputs from either controls or UI interfaces */
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoRun();
 public:
 
 	/** Returns CameraBoom subobject **/

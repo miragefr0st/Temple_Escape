@@ -69,6 +69,12 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 
 		// Interact
 		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoInteract);
+
+		// Crouch
+		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoCrouch);
+
+		// Run
+		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoRun);
 	}
 	else
 	{
@@ -160,4 +166,13 @@ void ATemple_EscapeCharacter::DoInteract()
 		Cast<IPlayerInteraction_Interface>(Hit.GetActor())->Execute_Interact(Hit.GetActor());
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact hit: "+Hit.GetActor()->GetName());
 	}
+}
+
+void ATemple_EscapeCharacter::DoCrouch()
+{
+}
+
+void ATemple_EscapeCharacter::DoRun()
+{
+	
 }
