@@ -31,6 +31,7 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 	GetCharacterMovement()->JumpZVelocity = 500.f;
 	GetCharacterMovement()->AirControl = 0.35f;
 	GetCharacterMovement()->MaxWalkSpeed = 500.f;
+	WalkSpeed = GetCharacterMovement()->MaxWalkSpeed;
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
@@ -170,9 +171,26 @@ void ATemple_EscapeCharacter::DoInteract()
 
 void ATemple_EscapeCharacter::DoCrouch()
 {
+	if (IsCrouched())
+	{
+		UnCrouch();
+	}
+	else
+	{
+		Crouch();
+	}
 }
 
 void ATemple_EscapeCharacter::DoRun()
 {
-	
+	if (_IsRunning)
+	{
+		GetCharacterMovement() -> MaxWalkSpeed = WalkSpeed;
+		_IsRunning = false;
+	}
+	else
+	{
+		GetCharacterMovement() -> MaxWalkSpeed = MaxRunSpeed;
+		_IsRunning = true;
+	}
 }

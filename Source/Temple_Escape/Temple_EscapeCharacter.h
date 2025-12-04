@@ -35,6 +35,19 @@ class ATemple_EscapeCharacter : public ACharacter
 	
 protected:
 	/** Size of LineTrace for Interact Detection */
+	UPROPERTY(EditAnywhere, Category="Character Movement: Walking")
+	float MaxRunSpeed = 700.0f;
+	bool _IsRunning = false;
+	float WalkSpeed;
+	
+	UPROPERTY(EditAnywhere, Category="Noise")
+	float NoiseMultiplier = 1.;
+	UPROPERTY(EditAnywhere, Category="Noise")
+	float RunNoiseMultiplier = 1.5;
+	UPROPERTY(EditAnywhere, Category="Noise")
+	float CrouchNoiseMultiplier = 0.;
+		
+	/** Size of LineTrace for Interact Detection */
 	UPROPERTY(EditAnywhere, Category="Interact")
 	float LineTraceLength = 1.0f;
 	
@@ -106,13 +119,17 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoInteract();
 
-	/** Handles interact pressed inputs from either controls or UI interfaces */
+	/** Handles crouch pressed inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoCrouch();
 
-	/** Handles interact pressed inputs from either controls or UI interfaces */
+	/** Handles run pressed inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoRun();
+
+	/** Return if the player is running or not */
+	UFUNCTION(BlueprintCallable, Category="Movement")
+	bool IsRunning(){return _IsRunning;}
 public:
 
 	/** Returns CameraBoom subobject **/
