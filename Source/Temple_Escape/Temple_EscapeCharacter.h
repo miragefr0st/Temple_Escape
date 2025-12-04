@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "InputActionValue.h"
+#include "Runtime/AIModule/Classes/Perception/AIPerceptionStimuliSourceComponent.h"
 #include "PlayerInteraction_Interface.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
@@ -33,20 +34,22 @@ class ATemple_EscapeCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
 	
+	/** Follow camera */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
+	UAIPerceptionStimuliSourceComponent* AIStimuliSource;
+	
 protected:
 	/** Size of LineTrace for Interact Detection */
 	UPROPERTY(EditAnywhere, Category="Character Movement: Walking")
 	float MaxRunSpeed = 700.0f;
 	bool _IsRunning = false;
 	float WalkSpeed;
-	
-	UPROPERTY(EditAnywhere, Category="Noise")
-	float NoiseMultiplier = 1.;
-	UPROPERTY(EditAnywhere, Category="Noise")
+	UPROPERTY(EditAnywhere, Category="AI Perception")
 	float RunNoiseMultiplier = 1.5;
-	UPROPERTY(EditAnywhere, Category="Noise")
+	UPROPERTY(EditAnywhere, Category="AI Perception")
 	float CrouchNoiseMultiplier = 0.;
-		
+	float _NoiseMultiplier = 1.;
+	
 	/** Size of LineTrace for Interact Detection */
 	UPROPERTY(EditAnywhere, Category="Interact")
 	float LineTraceLength = 1.0f;
@@ -130,6 +133,11 @@ public:
 	/** Return if the player is running or not */
 	UFUNCTION(BlueprintCallable, Category="Movement")
 	bool IsRunning(){return _IsRunning;}
+
+	/** Return noise multiplier value. Base value is 1. */
+	UFUNCTION(BlueprintCallable, Category="AI Perception")
+	bool GetCurrentNoiseMultiplier(){return _NoiseMultiplier;}
+	
 public:
 
 	/** Returns CameraBoom subobject **/

@@ -47,6 +47,9 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 
+	// Create AIPerception Stimuli Source
+	AIStimuliSource = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIStimuliSource"));
+
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
@@ -174,10 +177,14 @@ void ATemple_EscapeCharacter::DoCrouch()
 	if (IsCrouched())
 	{
 		UnCrouch();
+		_NoiseMultiplier = 1.;
 	}
 	else
 	{
+		GetCharacterMovement() -> MaxWalkSpeed = WalkSpeed;
+		_IsRunning = false;
 		Crouch();
+		_NoiseMultiplier = CrouchNoiseMultiplier;
 	}
 }
 
@@ -187,10 +194,16 @@ void ATemple_EscapeCharacter::DoRun()
 	{
 		GetCharacterMovement() -> MaxWalkSpeed = WalkSpeed;
 		_IsRunning = false;
+		_NoiseMultiplier = 1.;
 	}
 	else
 	{
+		if (IsCrouched())
+		{
+			UnCrouch();
+		}
 		GetCharacterMovement() -> MaxWalkSpeed = MaxRunSpeed;
 		_IsRunning = true;
+		_NoiseMultiplier = RunNoiseMultiplier;
 	}
 }
