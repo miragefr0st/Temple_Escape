@@ -136,7 +136,7 @@ public:
 
 	/** Return noise multiplier value. Base value is 1. */
 	UFUNCTION(BlueprintCallable, Category="AI Perception")
-	bool GetCurrentNoiseMultiplier(){return _NoiseMultiplier;}
+	float GetCurrentNoiseMultiplier(){return _NoiseMultiplier;}
 	
 public:
 
