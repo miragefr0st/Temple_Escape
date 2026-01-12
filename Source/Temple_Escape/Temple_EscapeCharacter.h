@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "InputActionValue.h"
 #include "Runtime/AIModule/Classes/Perception/AIPerceptionStimuliSourceComponent.h"
-#include "PlayerInteraction_Interface.h"
+#include  "PlayerInteraction_Interface.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
 #include "Temple_EscapeCharacter.generated.h"
@@ -16,6 +16,8 @@ class UInputAction;
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDeath);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChanged, float, Health);
 
 /**
  *  A simple player-controllable third person character
@@ -134,9 +136,20 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Movement")
 	bool IsRunning(){return _IsRunning;}
 
+public:
+	
 	/** Return noise multiplier value. Base value is 1. */
 	UFUNCTION(BlueprintCallable, Category="AI Perception")
 	float GetCurrentNoiseMultiplier(){return _NoiseMultiplier;}
+
+public:
+	/** Death dispatcher **/
+	UPROPERTY(BlueprintAssignable)
+	FOnDeath OnDeath;
+
+	/** Health dispatcher **/
+	UPROPERTY(BlueprintAssignable)
+	FOnHealthChanged OnHealthChanged;
 	
 public:
 
