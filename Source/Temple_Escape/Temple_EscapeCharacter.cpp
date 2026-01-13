@@ -31,6 +31,7 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 	GetCharacterMovement()->JumpZVelocity = 500.f;
 	GetCharacterMovement()->AirControl = 0.35f;
 	GetCharacterMovement()->MaxWalkSpeed = 500.f;
+	WalkSpeed = GetCharacterMovement()->MaxWalkSpeed;
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
@@ -46,18 +47,22 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 
+	// Create AIPerception Stimuli Source
+	AIStimuliSource = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIStimuliSource"));
+
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
 
 void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Purple, "compilation works");
 	// Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
 		// Jumping
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoJumpStart);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ATemple_EscapeCharacter::DoJumpEnd);
 
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ATemple_EscapeCharacter::Move);
@@ -66,8 +71,14 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ATemple_EscapeCharacter::Look);
 
-		//Flash
-		PlayerInputComponent->BindAction("Flash", IE_Pressed, this, &ATemple_EscapeCharacter::Broadcast);
+		// Interact
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoInteract);
+
+		// Crouch
+		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoCrouch);
+
+		// Run
+		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoRun);
 	}
 	else
 	{
@@ -113,64 +124,6 @@ void ATemple_EscapeCharacter::DoMove(float Right, float Forward)
 	}
 }
 
-void ATemple_EscapeCharacter::BeginPlay() {
-	Super::BeginPlay();
-	OnTriggered.BindUFunction(this, "TriggerEvent");
-
-	OnTriggeredMulticast.AddUObject(this, &ATemple_EscapeCharacter::MulticastDelegate);
-	OnTriggeredMulticast.AddUObject(this, &ATemple_EscapeCharacter::FlashForward);
-
-	BeginWelcome.BindUObject(this, &ATemple_EscapeCharacter::SayHello);
-	if (BeginWelcome.IsBound())
-	{
-		BeginWelcome.Execute();
-	}
-}
-
-void ATemple_EscapeCharacter::TriggerEvent() {
-	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			6.f,
-			FColor::Red,
-			FString::Printf(TEXT("Uniq Dynamic Delegate activated : You passed the door"))
-		);
-	}
-}
-
-void ATemple_EscapeCharacter::SayHello() {
-	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			6.f,
-			FColor::Red,
-			FString::Printf(TEXT("Single-Cast Delegate activated : Welcome Player"))
-		);
-	}
-}
-
-void ATemple_EscapeCharacter::MulticastDelegate() {
-	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			6.f,
-			FColor::Red,
-			FString::Printf(TEXT("Multicast Delegate activated : You pressed E for Flash"))
-		);
-	}
-}
-
-void ATemple_EscapeCharacter::FlashForward() {
-	FVector Forward = GetActorForwardVector();
-	FVector NewLocation = GetActorLocation() + Forward * FlashDistance;
-
-	SetActorLocation(NewLocation, true);
-}
-
-void ATemple_EscapeCharacter::Broadcast() {
-	OnTriggeredMulticast.Broadcast();
-}
-
 void ATemple_EscapeCharacter::DoLook(float Yaw, float Pitch)
 {
 	if (GetController() != nullptr)
@@ -191,4 +144,66 @@ void ATemple_EscapeCharacter::DoJumpEnd()
 {
 	// signal the character to stop jumping
 	StopJumping();
+}
+
+void ATemple_EscapeCharacter::DoInteract()
+{
+	/*Antipode LineTrace Example: https://dev.epicgames.com/community/snippets/2rR/simple-c-line-trace-collision-query*/
+
+	FHitResult Hit;
+	
+	FVector TraceStart = GetActorLocation();
+	FVector TraceEnd = GetActorLocation() + GetActorForwardVector() * LineTraceLength;
+	
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(this);
+ 
+	
+	GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, ECC_Vehicle, QueryParams);
+	
+	DrawDebugLine(GetWorld(), TraceStart, TraceEnd, Hit.bBlockingHit ? FColor::Blue : FColor::Red, false, 5.0f, 0, 5.0f);
+ 
+	// If the trace hit something, bBlockingHit will be true,
+	// and its fields will be filled with detailed info about what was hit
+	if (Hit.bBlockingHit && IsValid(Hit.GetActor()))
+	{
+		Cast<IPlayerInteraction_Interface>(Hit.GetActor())->Execute_Interact(Hit.GetActor());
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact hit: "+Hit.GetActor()->GetName());
+	}
+}
+
+void ATemple_EscapeCharacter::DoCrouch()
+{
+	if (IsCrouched())
+	{
+		UnCrouch();
+		_NoiseMultiplier = 1.;
+	}
+	else
+	{
+		GetCharacterMovement() -> MaxWalkSpeed = WalkSpeed;
+		_IsRunning = false;
+		Crouch();
+		_NoiseMultiplier = CrouchNoiseMultiplier;
+	}
+}
+
+void ATemple_EscapeCharacter::DoRun()
+{
+	if (_IsRunning)
+	{
+		GetCharacterMovement() -> MaxWalkSpeed = WalkSpeed;
+		_IsRunning = false;
+		_NoiseMultiplier = 1.;
+	}
+	else
+	{
+		if (IsCrouched())
+		{
+			UnCrouch();
+		}
+		GetCharacterMovement() -> MaxWalkSpeed = MaxRunSpeed;
+		_IsRunning = true;
+		_NoiseMultiplier = RunNoiseMultiplier;
+	}
 }

@@ -3,6 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "InputActionValue.h"
+#include "Runtime/AIModule/Classes/Perception/AIPerceptionStimuliSourceComponent.h"
+#include  "PlayerInteraction_Interface.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
 #include "Temple_EscapeCharacter.generated.h"
@@ -12,11 +15,9 @@ class UCameraComponent;
 class UInputAction;
 struct FInputActionValue;
 
-DECLARE_DYNAMIC_DELEGATE(FMyDynamicDelegate);
-DECLARE_DELEGATE(FWelcomeDelegate);
-DECLARE_MULTICAST_DELEGATE(FMulticastDelegate);
-
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDeath);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChanged, float, Health);
 
 /**
  *  A simple player-controllable third person character
@@ -35,8 +36,26 @@ class ATemple_EscapeCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
 	
+	/** Follow camera */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
+	UAIPerceptionStimuliSourceComponent* AIStimuliSource;
+	
 protected:
-
+	/** Size of LineTrace for Interact Detection */
+	UPROPERTY(EditAnywhere, Category="Character Movement: Walking")
+	float MaxRunSpeed = 700.0f;
+	bool _IsRunning = false;
+	float WalkSpeed;
+	UPROPERTY(EditAnywhere, Category="AI Perception")
+	float RunNoiseMultiplier = 1.5;
+	UPROPERTY(EditAnywhere, Category="AI Perception")
+	float CrouchNoiseMultiplier = 0.;
+	float _NoiseMultiplier = 1.;
+	
+	/** Size of LineTrace for Interact Detection */
+	UPROPERTY(EditAnywhere, Category="Interact")
+	float LineTraceLength = 1.0f;
+	
 	/** Jump Input Action */
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* JumpAction;
@@ -53,27 +72,26 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* MouseLookAction;
 
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* Flash;
+	/** Interaction Input Action */
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* InteractAction;
 
+	/** Interaction Input Action */
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* CrouchAction;
+
+	/** Interaction Input Action */
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* RunAction;
 public:
 
 	/** Constructor */
 	ATemple_EscapeCharacter();	
 
-	FMyDynamicDelegate OnTriggered;
-	FWelcomeDelegate BeginWelcome;
-	FMulticastDelegate OnTriggeredMulticast;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flash")
-	float FlashDistance = 300.f;
-
 protected:
 
 	/** Initialize input action bindings */
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	virtual void BeginPlay() override;
 
 protected:
 
@@ -83,18 +101,8 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
+	
 public:
-
-	void SayHello();
-
-	void MulticastDelegate();
-
-	void Broadcast();
-
-	UFUNCTION(BlueprintCallable, Category = "Input")
-	void TriggerEvent();
-
-	void FlashForward();
 
 	/** Handles move inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")
@@ -112,6 +120,37 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoJumpEnd();
 
+	/** Handles interact pressed inputs from either controls or UI interfaces */
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoInteract();
+
+	/** Handles crouch pressed inputs from either controls or UI interfaces */
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoCrouch();
+
+	/** Handles run pressed inputs from either controls or UI interfaces */
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoRun();
+
+	/** Return if the player is running or not */
+	UFUNCTION(BlueprintCallable, Category="Movement")
+	bool IsRunning(){return _IsRunning;}
+
+public:
+	
+	/** Return noise multiplier value. Base value is 1. */
+	UFUNCTION(BlueprintCallable, Category="AI Perception")
+	float GetCurrentNoiseMultiplier(){return _NoiseMultiplier;}
+
+public:
+	/** Death dispatcher **/
+	UPROPERTY(BlueprintAssignable)
+	FOnDeath OnDeath;
+
+	/** Health dispatcher **/
+	UPROPERTY(BlueprintAssignable)
+	FOnHealthChanged OnHealthChanged;
+	
 public:
 
 	/** Returns CameraBoom subobject **/
