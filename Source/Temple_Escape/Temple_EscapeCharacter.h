@@ -45,7 +45,8 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Character Movement: Walking")
 	float MaxRunSpeed = 700.0f;
 	bool _IsRunning = false;
-	float WalkSpeed;
+	UPROPERTY(EditAnywhere, Category="Character Movement: Walking")
+	float WalkSpeed = 300.0f;
 	UPROPERTY(EditAnywhere, Category="AI Perception")
 	float RunNoiseMultiplier = 1.5;
 	UPROPERTY(EditAnywhere, Category="AI Perception")
