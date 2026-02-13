@@ -39,7 +39,9 @@ class ATemple_EscapeCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UAIPerceptionStimuliSourceComponent* AIStimuliSource;
-	
+
+private:
+	AActor* InteractObject; 
 protected:
 	/** Size of LineTrace for Interact Detection */
 	UPROPERTY(EditAnywhere, Category="Character Movement: Walking")
@@ -77,6 +79,14 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* InteractAction;
 
+	/** Interaction Input Action */
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* HoldInteractAction;
+
+	/** Interaction Input Action */
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* ReleaseInteractAction;
+	
 	/** Interaction Input Action */
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* CrouchAction;
@@ -124,6 +134,14 @@ public:
 	/** Handles interact pressed inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoInteract();
+	
+	/** Handles interact pressed inputs from either controls or UI interfaces */
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoHoldInteract();
+    	
+	/** Handles interact pressed inputs from either controls or UI interfaces */
+	UFUNCTION(BlueprintCallable, Category="Input")
+	virtual void DoReleasedInteract();
 
 	/** Handles crouch pressed inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")

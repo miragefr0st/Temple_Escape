@@ -15,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../Programmes/Epic/Games/UE_5.6/Engine/Source/Runtime/CoreUObject/Public/Templates/Casts.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Programmes/Epic/Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Programmes/Epic/Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Programmes/Epic/Games/UE_5.6/Engine/Source/Runtime/Engine/Private/Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -129,6 +130,9 @@
       <workItem from="1767468936515" duration="3212000" />
       <workItem from="1768205328958" duration="4807000" />
       <workItem from="1770230106572" duration="174000" />
+      <workItem from="1770976248765" duration="2569000" />
+      <workItem from="1770982961505" duration="3071000" />
+      <workItem from="1770993649022" duration="4000" />
     </task>
     <servers />
   </component>
