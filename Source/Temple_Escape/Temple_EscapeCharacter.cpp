@@ -49,6 +49,7 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 	// Create AIPerception Stimuli Source
 	AIStimuliSource = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIStimuliSource"));
 
+	InteractObject = nullptr;
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
@@ -73,6 +74,12 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		// Interact
 		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoInteract);
 
+		// Holding Interact
+		EnhancedInputComponent->BindAction(HoldInteractAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoHoldInteract);
+
+		// Released Interact
+		EnhancedInputComponent->BindAction(ReleaseInteractAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoReleasedInteract);
+		
 		// Crouch
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoCrouch);
 
@@ -156,7 +163,6 @@ void ATemple_EscapeCharacter::DoInteract()
 	
 	FCollisionQueryParams QueryParams;
 	QueryParams.AddIgnoredActor(this);
- 
 	
 	GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, ECC_Vehicle, QueryParams);
 	
@@ -167,8 +173,24 @@ void ATemple_EscapeCharacter::DoInteract()
 	if (Hit.bBlockingHit && IsValid(Hit.GetActor()))
 	{
 		Cast<IPlayerInteraction_Interface>(Hit.GetActor())->Execute_Interact(Hit.GetActor());
+		InteractObject = Hit.GetActor();
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact hit: "+Hit.GetActor()->GetName());
 	}
+}
+
+void ATemple_EscapeCharacter::DoHoldInteract()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact hold ");
+	if (InteractObject != nullptr)
+	{Cast<IPlayerInteraction_Interface>(InteractObject)->Execute_HoldInteract(InteractObject);}
+}
+
+void ATemple_EscapeCharacter::DoReleasedInteract()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact release ");
+	if (InteractObject != nullptr)
+	{Cast<IPlayerInteraction_Interface>(InteractObject)->Execute_ReleasedInteract(InteractObject);}
+	InteractObject = nullptr;
 }
 
 void ATemple_EscapeCharacter::DoCrouch()
