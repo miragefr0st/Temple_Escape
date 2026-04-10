@@ -1,194 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e788af4f-ed49-4727-9bcd-3450fd9b0259" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Temple_Escape.dir/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Temple_Escape.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Temple_Escape.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Temple_Escape.dir/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Animation/BlazingGear/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Animation/LesDallesLumineuses/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Animation/PontInvisibles/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Animation/RayonsLumineux/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Assets/BlazingGear/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Assets/LesDallesLumineuses/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Assets/PontInvisibles/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Assets/RayonsLumineux/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/IA/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/BP_TestInteract.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/BlazingGear/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/LesDallesLumineuses/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/PontInvisibles/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/RayonsLumineux/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Medieval_Axe/medieval_axe/Materials/material.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Medieval_Axe/medieval_axe/StaticMeshes/medieval_axe.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Medieval_Axe/medieval_axe/Textures/medieval_axe_texture_0.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Medieval_Axe/medieval_axe/Textures/medieval_axe_texture_1.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Medieval_Axe/medieval_axe/Textures/medieval_axe_texture_2.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Megascans/Surfaces/Mine_Rock_Wall_uebmddyn/Medium/uebmddyn_tier_2/Materials/MI_uebmddyn.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Megascans/Surfaces/Mine_Rock_Wall_uebmddyn/Medium/uebmddyn_tier_2/Textures/T_uebmddyn_2K_B.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Megascans/Surfaces/Mine_Rock_Wall_uebmddyn/Medium/uebmddyn_tier_2/Textures/T_uebmddyn_2K_N.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Megascans/Surfaces/Mine_Rock_Wall_uebmddyn/Medium/uebmddyn_tier_2/Textures/T_uebmddyn_2K_ORM.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Spike_Trap/spike_trap_01/Materials/OPM0041.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Spike_Trap/spike_trap_01/StaticMeshes/spike_trap_01.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Spike_Trap/spike_trap_01/Textures/spike_trap_01_texture_0.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Spike_Trap/spike_trap_01/Textures/spike_trap_01_texture_1.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Fab/Spike_Trap/spike_trap_01/Textures/spike_trap_01_texture_2.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_Crouch.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_Interact.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_Run.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/BlazingGear/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/LesDallesLumineuses/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/PontInvisible/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/RayonsLumineux/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/BlazingGear/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/LesDallesLumineuse/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/PontInvisible/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/RayonsLumineux/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/Traps/BP_SwingingAxe.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/Traps/BoulderRun/BP_Boulder.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/Traps/BoulderRun/Sphere_2C7DE267.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/Traps/CollapsingBridge/BP_AncorFields.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/Traps/CollapsingBridge/Box_120921F4.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/Traps/CollapsingBridge/BridgeBomb.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/Traps/CollapsingBridge/GC_Box.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/Traps/CollapsingBridge/GC_Box_Blueprint.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Maps/Traps/CollapsingBridge/Spike_Trap/BP_DeathSpike.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Materials/BlazingGear/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Materials/LesDallesLumineuses/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Materials/PontInvisible/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Materials/RayonsLumineux/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/SFX/BlazingGear/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/SFX/LesDallesLumineuses/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/SFX/PontInvisible/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/SFX/RayonsLumineux/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BPI_CharacterInterface.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/DeathVolumes/BP_DeathSpike.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson1.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ThirdPerson/_GENERATED/rasma/Box_DC0A8A50.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/UI/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/VFX/BlazingGear/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/VFX/LesDallesLumineuses/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/VFX/PontInvisibles/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/VFX/RayonsLumineux/BleuprintFActice.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/0/93/4AG8OLS3WI2AL4L47QLQXZ.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/0/Y6/FW9LIG5OX47FUEU6387UNX.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/2T/PDVB5JZEKNW7YEIK3432KQ.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/UB/7SKNK1IWHLMX79K2FWA6KC.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/3/0X/FLWBFJZ31VPHB6NDBUQL7P.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/5/B1/MP1OWETEKKHDP7E3TWDVHV.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/5/F0/9LCJLJWV6JJK29F90UUGEP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/5/F7/KJ25CU66CVWUJAXGGC0ROV.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/6/6L/MBXM3EUVTGHIYWFIQR3UFP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/6/DY/FFG4R4G9LKTMSC9RYSKU70.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/7/72/ELRV452QG2SXO07FTXVS64.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/PR/8S8Y73PVHG7QAMRP4VZ90F.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/9/EJ/D5N1E7IEGO1OUUJG2NQ0HS.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/B/91/J9ZLSDFQBLDM923GC9XD5Y.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/B/Q6/L5D4EAXTSFAJEGQKKSSWZK.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/B/SF/2YCSQRHMIP7NYAW9AIY4YD.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/8C/9D7QCZ1YXHNLOWTEJLESRA.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/IV/1L7H73EZ2MIYI0DTFJZELH.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/0U/YTIJ8E92T115XTS4HVL1TW.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/2W/YMWZ0CYMJGHPIHL1O8RFUB.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/D4/CAXT0EXL8XI56ZFHKOKR34.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/0/2F/MPG9LPRHT5QCRIDLPLUGLO.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/0/75/1GYJAAA9Y1LI7Z9K1WJ21Y.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/0/AS/EUYEQM4F0MA0SKVU094DQT.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/0/F4/WT4P72CF5JHX3W0I6V0VF5.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/0/VS/84ZU3KOG45OKDAFXGKAJVF.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/1/2L/O1TX8BOGUYQJXSE3B048JV.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/1/81/HS7LIKY6S1CQRQ60TNRLAY.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/1/91/02HZT83U7F3BDWGCKLZ6XG.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/1/CL/UGQUCGSWWYAWNRJIYT54CG.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/1/OQ/NUTI5CN7OV0FNL0Q056APC.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/1/S8/FN3S4WWOS7F24R8BOJ06UC.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/2/IW/6YJ7IPH5CFYIVVUZKUI6YM.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/2/RC/1GN2ECVKY3JQTENH6OT1GM.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/2/RL/WO7YL37O7WQHUT4MVCP8RD.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/2/WN/EQO43KT1Q3USZR7O27N55K.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/3/04/OHD2X97VZ400I56N906DWV.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/3/2W/J7GPJPOUIHX8XYRPYJ2NEE.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/3/DJ/88XE6AMGBQ17DE6P8CCN1U.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/3/EQ/I78IL0545VR6O8CITSBFRT.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/3/LP/RR87HEZYGDGMC4NYRACTQK.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/3/MN/3KCZHXS4DMQ2T8PXS5NAP8.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/3/OJ/RNQNVQNZ879W0OLIYKTCYL.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/4/88/5WUTHTOOT3FNOFJDVYNS96.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/4/FZ/O5O09OZUIVQG8U4Q8TZXLQ.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/4/IV/4WFRBY2XUV3EWP108473N9.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/4/XO/IKCMAPAZL29WV20BQ9MG1H.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/5/15/MX2ZK4778860W04VYMPEGD.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/5/7R/U9N7UI9XGNE8GZC2JTLIUG.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/5/EF/2HPNJALAAHQI6W94HXSRZ3.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/5/HP/UBBAK28ZHYUPLYYF0YQ6R1.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/6/EN/R2P1ZEOOQRKNLYONYS9OOL.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/6/FJ/D8IHETJ583967TXAUNGTT9.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/6/UE/CKZFYISJ8F9E05ECD2X2HU.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/7/97/3FLB3PZQE2ADL34G5YUF6H.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/7/I9/67HF3GK2ND3XD9AK0XW7R4.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/7/O7/H081PMVFJTJQEX1865TKXW.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/7/OT/DNZGYMQ7ZZVX7O8AKIBTY2.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/7/VO/PRZ9LKKAD106DVMLITB5UK.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/7/ZX/S0QD00GW0HF6K38EAX5047.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/8/08/SYQXFCPILWFDU289MZNQ6H.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/8/1H/EEJDDWOZ74G5S4HTTD1EOC.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/8/KS/0S3W0UF29GQ46PUGM3E9ND.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/8/MW/E0U8UTAWU9R5B00DM1BLXN.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/8/PL/XFDLLW248W48QUOZEC1O0P.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/8/WM/5BL6GKZCJP2NQDLKUODYZW.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/9/3B/8ANCD3XC895U13BC3GL72N.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/9/AA/G4JFHZX8NDLMZM8RJ3ZWO4.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/9/IY/HPW80X473KSB6QFKMKANKB.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/9/N7/3YKC2WFFW961XVWCOQU3HL.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/9/V3/TCGMT7Q82EJGFTTPGQUOGD.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/9/XU/RBKNVHB88YXQ53069XSPUH.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/9/YD/3Y7ALSY4SWKOZY8UP43X9Y.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/A/3P/5LMEEC01RG09GQNGHVOTCN.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/A/DE/GQOSV0WE19YIC3CULNT1MZ.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/A/DI/5TPR8IQXBI0UUMC4SNROAL.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/A/J4/B166JOCRAQLAROV208N08Q.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/B/5O/XX24ZI9IK0SIMFEDJNYXUD.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/C/6S/WGOTPL8SQBSW7B0W1JC6P7.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/C/AX/ZRBL0NFEL5EZP5DWAD6KO1.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/C/EK/X5MYV2WXKFQR39QMTQLQP8.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/C/FA/OI6FYQI9G2ETWE8G4P5VQ1.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/C/U8/KECVYF2VD9SLFYTP62N5H8.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/D/5X/O3DSXCR02MJ4AHOBS1RDUA.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/D/62/MTS9QXHFISVMOSOO7AC165.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/D/7X/61P6KCP4FJ180QALZD45ZT.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/D/D6/EC6BDUZ2IO1B1WBGXALYV3.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/D/SL/KMMBC5UM8ZJBOAQ71M8XEB.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/D/ZB/1KPTS8PJJDVZDJECH35559.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/E/03/ORUB6E0SK8HTJJ6TPECWQC.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/E/5O/2ASE7AF1I2HA7D56D6282J.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/E/6U/E7GX33CCH6LKBUCTJ8724J.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/E/92/RGTFUBS3913MRM8EUKVV9H.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/E/RI/8P1KOVFQN81TYB1HRV34I5.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/E/TW/CCA5CMHPGEYEWCWP6817EY.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/E/VG/DQYVV9TN0NZZIAS0G85NNV.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson1/F/1Q/M0I4JKSYI5FUXYQTEL3PKQ.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalObjects__/ThirdPerson/Lvl_ThirdPerson1/1/25/HGA0IZCW9JVQPNRY8DJLBR.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalObjects__/ThirdPerson/Lvl_ThirdPerson1/D/3B/CK6KXY7PBKY8SQ3UWXP2X0.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Temple_Escape/Private/MyCharacter.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Temple_Escape/Private/PlayerInteraction_Interface.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Temple_Escape/Public/MyCharacter.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Temple_Escape/Public/PlayerInteraction_Interface.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/IMC_Default.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonPlayerController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestScene/TestScene/1/Q4/YI6XXZAZLX97J0Q73VFONT.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestScene/TestScene/1/Q4/YI6XXZAZLX97J0Q73VFONT.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestScene/TestScene/7/8Y/VSRDO9R83GQ7N27RSAHI0I.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestScene/TestScene/7/8Y/VSRDO9R83GQ7N27RSAHI0I.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestScene/TestScene/C/GJ/ADJA50IIN8GBZYTZMPGYQE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestScene/TestScene/C/GJ/ADJA50IIN8GBZYTZMPGYQE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/HY/Q7CPP7VHOXBAMAJI90W626.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/HY/Q7CPP7VHOXBAMAJI90W626.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Temple_Escape/Temple_EscapeCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Temple_Escape/Temple_EscapeCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Temple_Escape/Temple_EscapeCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Temple_Escape/Temple_EscapeCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temple_Escape.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Temple_Escape.uproject" afterDir="false" />
-    </list>
+    <list default="true" id="e788af4f-ed49-4727-9bcd-3450fd9b0259" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -197,22 +10,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="38CuTKB3rQmdUzY2wsFDeO12gJL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging Mattys",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging Mattys&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
