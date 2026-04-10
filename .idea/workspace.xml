@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e788af4f-ed49-4727-9bcd-3450fd9b0259" name="Changes" comment="" />
+    <list default="true" id="e788af4f-ed49-4727-9bcd-3450fd9b0259" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/LesDallesLumineuses/BP_Dalle.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/LesDallesLumineuses/BP_DalleManager.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Materials/LesDallesLumineuses/M_ColorDalle.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson2/3/UF/VQASJKYD0QZHE2CNQD1VBO.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson2/5/0I/L66DLWJQF4EEBMQFV45CH8.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson2/8/OV/2KXTU8KPJGX6OJHYPFBYK6.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson2/D/1Q/4K9R4FISPIZQZR9ZUFGQ4M.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson2/E/FQ/17LI0W9Y7ZS6UJH0HA7JXP.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/__ExternalObjects__/ThirdPerson/Lvl_ThirdPerson2/5/8X/NH8XUMRIETDQ8V0SCLSRDE.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/BP_Levier.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/BP_Levier.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/LevelDesign/LesDallesLumineuses/BleuprintFActice.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Menu/Menu.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Menu/Menu.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson2/2/H9/ZUYLQD24WMLN3MQHMDMXZ7.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson2/2/H9/ZUYLQD24WMLN3MQHMDMXZ7.uasset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +39,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging Mattys&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
 }</component>
