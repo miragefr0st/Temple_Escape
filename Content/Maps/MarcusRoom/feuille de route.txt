@@ -1,0 +1,9 @@
+- ajouter un shader qui va simuler une télé
+- ajouter un shader qui simule un tableau
+- ajouter un shader d'eau quelque part
+- ajouter des shaders de lumiere
+- ajouter des shader sur les murs, sol, plafond, et objet pour un reflet réel (light, normal, texture ect...)
+- ajouter des shader pour faire bouger les plantes
+- ajouter un shader de feu
+- ajouter un shader de bulle
+- ajouter un shader de megalith
