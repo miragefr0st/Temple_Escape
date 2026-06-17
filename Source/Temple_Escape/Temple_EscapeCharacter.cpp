@@ -56,7 +56,7 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 
 void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Purple, "compilation works");
+	
 	// Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
@@ -138,12 +138,16 @@ void ATemple_EscapeCharacter::DoJumpStart()
 {
 	// signal the character to jump
 	Jump();
+	Stretch();
+	GetCharacterMovement()->MaxWalkSpeed = _IsRunning ? MaxRunSpeed/JumpSpeedDebuf : WalkSpeed/JumpSpeedDebuf;
+
 }
 
 void ATemple_EscapeCharacter::DoJumpEnd()
 {
 	// signal the character to stop jumping
 	StopJumping();
+	GetCharacterMovement()->MaxWalkSpeed = _IsRunning ? MaxRunSpeed : WalkSpeed;
 }
 
 void ATemple_EscapeCharacter::DoInteract()

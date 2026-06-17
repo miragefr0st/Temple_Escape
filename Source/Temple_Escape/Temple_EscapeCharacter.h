@@ -49,6 +49,8 @@ protected:
 	bool _IsRunning = false;
 	UPROPERTY(EditAnywhere, Category="Character Movement: Walking")
 	float WalkSpeed = 300.0f;
+	UPROPERTY(EditAnywhere, Category = "Character Movement: Walking")
+	float JumpSpeedDebuf = 2.0f;
 	UPROPERTY(EditAnywhere, Category="AI Perception")
 	float RunNoiseMultiplier = 1.5;
 	UPROPERTY(EditAnywhere, Category="AI Perception")
@@ -144,6 +146,12 @@ public:
 	/** Return noise multiplier value. Base value is 1. */
 	UFUNCTION(BlueprintCallable, Category="AI Perception")
 	float GetCurrentNoiseMultiplier(){return _NoiseMultiplier;}
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "CPP Events")
+	void Stretch();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "CPP Events")
+	void Squash();
 
 public:
 	/** Death dispatcher **/
