@@ -22,10 +22,4 @@ class TEMPLE_ESCAPE_API IPlayerInteraction_Interface
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Player Interaction")
 	void Interact();
-
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Player Interaction")
-	void HoldInteract();
-
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Player Interaction")
-	void ReleasedInteract();
 };
