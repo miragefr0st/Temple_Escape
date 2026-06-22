@@ -56,7 +56,7 @@ ATemple_EscapeCharacter::ATemple_EscapeCharacter()
 
 void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Purple, "compilation works");
+	
 	// Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
@@ -73,12 +73,6 @@ void ATemple_EscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 
 		// Interact
 		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoInteract);
-
-		// Holding Interact
-		EnhancedInputComponent->BindAction(HoldInteractAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoHoldInteract);
-
-		// Released Interact
-		EnhancedInputComponent->BindAction(ReleaseInteractAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoReleasedInteract);
 		
 		// Crouch
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Started, this, &ATemple_EscapeCharacter::DoCrouch);
@@ -144,12 +138,16 @@ void ATemple_EscapeCharacter::DoJumpStart()
 {
 	// signal the character to jump
 	Jump();
+	Stretch();
+	GetCharacterMovement()->MaxWalkSpeed = _IsRunning ? MaxRunSpeed/JumpSpeedDebuf : WalkSpeed/JumpSpeedDebuf;
+
 }
 
 void ATemple_EscapeCharacter::DoJumpEnd()
 {
 	// signal the character to stop jumping
 	StopJumping();
+	GetCharacterMovement()->MaxWalkSpeed = _IsRunning ? MaxRunSpeed : WalkSpeed;
 }
 
 void ATemple_EscapeCharacter::DoInteract()
@@ -172,25 +170,13 @@ void ATemple_EscapeCharacter::DoInteract()
 	// and its fields will be filled with detailed info about what was hit
 	if (Hit.bBlockingHit && IsValid(Hit.GetActor()))
 	{
-		Cast<IPlayerInteraction_Interface>(Hit.GetActor())->Execute_Interact(Hit.GetActor());
-		InteractObject = Hit.GetActor();
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact hit: "+Hit.GetActor()->GetName());
+		if (Hit.GetActor()->GetClass()->ImplementsInterface(UPlayerInteraction_Interface::StaticClass())) {
+			IPlayerInteraction_Interface::Execute_Interact(Hit.GetActor());
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact hit: " + Hit.GetActor()->GetName());
+			InteractObject = Hit.GetActor();
+		}
+
 	}
-}
-
-void ATemple_EscapeCharacter::DoHoldInteract()
-{
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact hold ");
-	if (InteractObject != nullptr)
-	{Cast<IPlayerInteraction_Interface>(InteractObject)->Execute_HoldInteract(InteractObject);}
-}
-
-void ATemple_EscapeCharacter::DoReleasedInteract()
-{
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, "Interact release ");
-	if (InteractObject != nullptr)
-	{Cast<IPlayerInteraction_Interface>(InteractObject)->Execute_ReleasedInteract(InteractObject);}
-	InteractObject = nullptr;
 }
 
 void ATemple_EscapeCharacter::DoCrouch()
